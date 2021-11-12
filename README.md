@@ -1,7 +1,7 @@
 # 模組架構
-* test.v - 連接 pattern 和飛鏢機
-* pattern.v - test pattern
-* dart.v - 飛鏢機 
+- test.v - 連接 pattern 和飛鏢機
+- pattern.v - test pattern
+- dart.v - 飛鏢機 
 
 # TODO
 - [x]  readme
