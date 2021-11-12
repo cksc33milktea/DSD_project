@@ -17,7 +17,7 @@
 - Player 2 win: 判斷玩家二是否分數歸零
 - Game set: 判斷是否有人分數歸零
 
-![placeholder](../master/myFolder/image.png)
+![Block_diagram](./Figures/Block_diagram.png)
 
 # FSM 運行模式
 - Start:start state
@@ -29,7 +29,7 @@
 - Result: 讓 pattern 輸出結果
 - Finish: 等待 reset
 
-![placeholder](../master/myFolder/image.png)
+![State_diagram](./Figures/State_diagram.png)
 
 # 目前假設（待修正）
 1. 靶的大小為 10*10 ，共 100 個點，每點分數現在為 3 分， dart.v 74~83 行可修改分數。
