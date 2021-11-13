@@ -24,15 +24,27 @@ for x in range(n):
         try:
             cos = inner_product/ll
         except ZeroDivisionError:
-            cos = 1
+            mesh[x*n+y] = 50
+            continue
         if ll**2 > central_point[0]**2:
-            mesh[x*n+y] = -1
+            mesh[x*n+y] = 0
+        elif ll**2 == central_point[0]**2:
+            if x >= n//2:
+                mesh[x*n+y] = 2 * from_degree_to_score(360-round(math.acos(cos) / (math.pi) * 180, 2))
+            else:
+                mesh[x*n+y] = 2 * from_degree_to_score(round(math.acos(cos) / (math.pi) * 180, 2))
+        elif ll**2 < central_point[0]**2 /2 *1.1 and ll**2 > central_point[0]**2 /2 *0.9:
+            if x >= n//2:
+                mesh[x*n+y] = 3 * from_degree_to_score(360-round(math.acos(cos) / (math.pi) * 180, 2))
+            else:
+                mesh[x*n+y] = 3 * from_degree_to_score(round(math.acos(cos) / (math.pi) * 180, 2))
+        elif ll**2 < central_point[0]**2 *0.02:
+            mesh[x*n+y] = 50
         else:
             if x >= n//2:
-                mesh[x*n+y] = 360-round(math.acos(cos) / (math.pi) * 180, 2)
+                mesh[x*n+y] = from_degree_to_score(360-round(math.acos(cos) / (math.pi) * 180, 2))
             else:
-                mesh[x*n+y] = round(math.acos(cos) / (math.pi) * 180, 2)
-mesh = [from_degree_to_score(p) for p in mesh]
+                mesh[x*n+y] = from_degree_to_score(round(math.acos(cos) / (math.pi) * 180, 2))
 print(f"n = {n}:")
 print("{", end=None)
 for x in range(n):
