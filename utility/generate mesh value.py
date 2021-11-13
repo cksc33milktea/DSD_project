@@ -36,4 +36,9 @@ for start in range(0, n**2, 10):
     print(mesh[start:start+10])
 print()
 print("for copy:")
-print(mesh)
+print("{", end=None)
+for x in range(n):
+    for y in range(n):
+        print(f"9'd{mesh[x*n+y]}", end=","+" "*(3-len(str(mesh[x*n+y]))))
+    print()
+print("}", end=None)
