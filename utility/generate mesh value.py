@@ -1,6 +1,6 @@
 import math
 from pprint import pprint
-n = 10
+n = 21
 mesh = [0]*n**2
 
 def from_degree_to_score(d):
@@ -22,7 +22,10 @@ for x in range(n):
         now_vector = (x-central_point[0], y-central_point[0])
         ll = math.sqrt(now_vector[0]**2 + now_vector[1]**2)
         inner_product = now_vector[0]*normal_vector[0] + now_vector[1]*normal_vector[1]
-        cos = inner_product/ll
+        try:
+            cos = inner_product/ll
+        except ZeroDivisionError:
+            cos = 1
         if ll**2 > central_point[0]**2:
             mesh[x*n+y] = -1
         else:
@@ -35,7 +38,7 @@ print("graph:")
 for start in range(0, n**2, 10):
     print(mesh[start:start+10])
 print()
-print("for copy:")
+print(f"n = {n}:")
 print("{", end=None)
 for x in range(n):
     for y in range(n):
