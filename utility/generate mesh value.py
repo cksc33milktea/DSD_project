@@ -1,5 +1,5 @@
 import math
-n = 21
+n = 31
 mesh = [0]*n**2
 
 def from_degree_to_score(d):
@@ -14,6 +14,10 @@ def from_degree_to_score(d):
 # |
 # v
 # y
+
+# BULL: 2/20 -> 10%
+# T: 10~12 / 20 -> 50~60%
+# D: 17.5~20 / 20 -> 87.5%
 central_point = (n/2-0.5, n/2-0.5)
 normal_vector = (0, -1)
 for x in range(n):
@@ -28,17 +32,17 @@ for x in range(n):
             continue
         if ll**2 > central_point[0]**2:
             mesh[x*n+y] = 0
-        elif ll**2 == central_point[0]**2:
+        elif ll**2 >= central_point[0]**2 * 0.875:
             if x >= n//2:
                 mesh[x*n+y] = 2 * from_degree_to_score(360-round(math.acos(cos) / (math.pi) * 180, 2))
             else:
                 mesh[x*n+y] = 2 * from_degree_to_score(round(math.acos(cos) / (math.pi) * 180, 2))
-        elif ll**2 < central_point[0]**2 /2 *1.1 and ll**2 > central_point[0]**2 /2 *0.9:
+        elif ll**2 < central_point[0]**2 *0.65 and ll**2 > central_point[0]**2 *0.55:
             if x >= n//2:
                 mesh[x*n+y] = 3 * from_degree_to_score(360-round(math.acos(cos) / (math.pi) * 180, 2))
             else:
                 mesh[x*n+y] = 3 * from_degree_to_score(round(math.acos(cos) / (math.pi) * 180, 2))
-        elif ll**2 < central_point[0]**2 *0.02:
+        elif ll**2 < central_point[0]**2 *0.03:
             mesh[x*n+y] = 50
         else:
             if x >= n//2:
