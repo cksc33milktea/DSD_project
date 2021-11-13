@@ -1,5 +1,4 @@
 import math
-from pprint import pprint
 n = 21
 mesh = [0]*n**2
 
@@ -34,10 +33,6 @@ for x in range(n):
             else:
                 mesh[x*n+y] = round(math.acos(cos) / (math.pi) * 180, 2)
 mesh = [from_degree_to_score(p) for p in mesh]
-print("graph:")
-for start in range(0, n**2, 10):
-    print(mesh[start:start+10])
-print()
 print(f"n = {n}:")
 print("{", end=None)
 for x in range(n):
