@@ -5,7 +5,7 @@
 // Project Name: final project of NYCU CS DSD course 
 // 
 // Company: Institute of Electronics, National Yang Ming Chiao Tung University 
-// Engineer: Yi Ting,Wu
+// Engineer: Yi-Ting,Wu
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -17,9 +17,11 @@ wire              player_1_done;
 wire              player_2_done;
 wire              player_1_win;
 wire              player_2_win;
+wire  [8:0]       player_1_pt;
+wire  [8:0]       player_2_pt;
 wire              dart_come;
-wire  [3:0]       dart_position_x;
-wire  [3:0]       dart_position_y;
+wire  [7:0]       dart_position_x;
+wire  [7:0]       dart_position_y;
 wire              clk;
 wire              reset;
 
@@ -30,6 +32,8 @@ dart d1     (
              .player_2_done_o(player_2_done),
              .player_1_win_o(player_1_win),
              .player_2_win_o(player_2_win),
+             .player_1_pt_o(player_1_pt),
+             .player_2_pt_o(player_2_pt),
              .dart_come_i(dart_come),
              .dart_position_x_i(dart_position_x),
              .dart_position_y_i(dart_position_y),
@@ -46,6 +50,8 @@ pattern p1  (
              .player_2_done_i(player_2_done),
              .player_1_win_i(player_1_win),
              .player_2_win_i(player_2_win),
+             .player_1_pt_i(player_1_pt),
+             .player_2_pt_i(player_2_pt),
              .clk(clk),
              .reset(reset)
              );
