@@ -60,33 +60,113 @@ begin //system reset for first 100ns
     #100 reset=1'b1;
     #100
     #100
-
     dart_come_o =1;
-    dart_position_x_o = 4;
-    dart_position_y_o = 15;
-    #60
-    dart_position_x_o = 4;
-    dart_position_y_o = 15;
-    #60
 
-    dart_position_x_o = 4;
-    dart_position_y_o = 15;
-    #60
-    dart_position_x_o = 4;
-    dart_position_y_o = 15;
-    #60
+    // player 1
+    dart_position_x_o = 13;
+    dart_position_y_o = 2;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 2;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 3;
+    @(posedge player_1_done_i or posedge player_2_done_i)
 
-    dart_position_x_o = 26;
-    dart_position_y_o = 19;
-    #20
-    dart_position_x_o = 1;
-    dart_position_y_o = 14;
-    #20
+    // player 2
+    dart_position_x_o = 13;
+    dart_position_y_o = 2;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 24;
+    dart_position_y_o = 4;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 13;
+    dart_position_y_o = 2;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 1
+    dart_position_x_o = 14;
+    dart_position_y_o = 3;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 13;
+    dart_position_y_o = 15;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 13;
+    dart_position_y_o = 2;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 2
+    dart_position_x_o = 13;
+    dart_position_y_o = 15;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 16;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 13;
+    dart_position_y_o = 16;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 1
+    dart_position_x_o = 14;
+    dart_position_y_o = 3;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 3;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 13;
+    dart_position_y_o = 2;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 2
+    dart_position_x_o = 19;
+    dart_position_y_o = 26;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 3;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 3;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 1
+    dart_position_x_o = 13;
+    dart_position_y_o = 1;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 14;
+    dart_position_y_o = 1;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 18;
+    dart_position_y_o = 23;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 2
+    dart_position_x_o = 19;
+    dart_position_y_o = 11;
+    @(posedge player_1_done_i or posedge player_2_done_i)
     dart_position_x_o = 14;
     dart_position_y_o = 15;
-    #20
-    
-    #60
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 15;
+    dart_position_y_o = 21;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+
+    // player 1
+    dart_position_x_o = 20;
+    dart_position_y_o = 26;
+    @(posedge player_1_done_i or posedge player_2_done_i) // BUST
+
+    // player 2
+    dart_position_x_o = 15;
+    dart_position_y_o = 0;
+    @(posedge player_1_done_i or posedge player_2_done_i)
+    dart_position_x_o = 8;
+    dart_position_y_o = 28;
+    @(posedge player_1_done_i or posedge player_2_done_i) // BUST
+
+    // player 1
+    dart_position_x_o = 20;
+    dart_position_y_o = 29;
+    @(posedge player_1_done_i or posedge player_2_done_i)
     $finish;
 end
 
