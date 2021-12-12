@@ -62,6 +62,9 @@ begin //system reset for first 100ns
     #100
     dart_come_o =1;
 
+    $monitor("Scoreboard:\nplayer 1 [%d], player 2 [%d]", player_1_pt_i, player_2_pt_i);
+    // $monitor("Hit (%d, %d)", dart_position_x_o, dart_position_y_o);
+
     // player 1
     dart_position_x_o = 13;
     dart_position_y_o = 2;
@@ -72,6 +75,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 14;
     dart_position_y_o = 3;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 1 done.");
 
     // player 2
     dart_position_x_o = 13;
@@ -83,6 +87,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 13;
     dart_position_y_o = 2;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 2 done.");
 
     // player 1
     dart_position_x_o = 14;
@@ -94,6 +99,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 13;
     dart_position_y_o = 2;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 1 done.");
 
     // player 2
     dart_position_x_o = 13;
@@ -105,6 +111,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 13;
     dart_position_y_o = 16;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 2 done.");
 
     // player 1
     dart_position_x_o = 14;
@@ -116,6 +123,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 13;
     dart_position_y_o = 2;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 1 done.");
 
     // player 2
     dart_position_x_o = 19;
@@ -127,6 +135,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 14;
     dart_position_y_o = 3;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 2 done.");
 
     // player 1
     dart_position_x_o = 13;
@@ -138,6 +147,7 @@ begin //system reset for first 100ns
     dart_position_x_o = 18;
     dart_position_y_o = 23;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 1 done.");
 
     // player 2
     dart_position_x_o = 19;
@@ -149,11 +159,13 @@ begin //system reset for first 100ns
     dart_position_x_o = 15;
     dart_position_y_o = 21;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 2 done.");
 
     // player 1
     dart_position_x_o = 20;
     dart_position_y_o = 26;
     @(posedge player_1_done_i or posedge player_2_done_i) // BUST
+    $display("player 1 done.");
 
     // player 2
     dart_position_x_o = 15;
@@ -162,11 +174,13 @@ begin //system reset for first 100ns
     dart_position_x_o = 8;
     dart_position_y_o = 28;
     @(posedge player_1_done_i or posedge player_2_done_i) // BUST
+    $display("player 2 done.");
 
     // player 1
     dart_position_x_o = 20;
     dart_position_y_o = 29;
     @(posedge player_1_done_i or posedge player_2_done_i)
+    $display("player 1 done.");
     $finish;
 end
 
