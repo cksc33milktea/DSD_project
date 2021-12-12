@@ -46,16 +46,48 @@ reg                  clk;
 reg                  reset;
 
 initial clk=1'b0;//initialize clk
-
-initial begin //system reset for first 100ns
-    reset=1'b0;
-    #100 reset=1'b1;
-end
-
-initial dart_come_o=1'b1;//initialize dart come
-initial dart_position_x_o=9'd15;//initialize dart x position
-initial dart_position_y_o=9'd29;//initialize dart y position
+initial dart_come_o=1'b0;//initialize dart come
+initial dart_position_x_o=9'd0;//initialize dart x position
+initial dart_position_y_o=9'd0;//initialize dart y position
 
 always #10 clk=~clk;//generate a 50MHz system clk without clock jitter
+
+initial 
+begin //system reset for first 100ns
+    $dumpfile("pattern.vcd");
+    $dumpvars;
+    reset=1'b0;
+    #100 reset=1'b1;
+    #100
+    #100
+
+    dart_come_o =1;
+    dart_position_x_o = 4;
+    dart_position_y_o = 15;
+    #60
+    dart_position_x_o = 4;
+    dart_position_y_o = 15;
+    #60
+
+    dart_position_x_o = 4;
+    dart_position_y_o = 15;
+    #60
+    dart_position_x_o = 4;
+    dart_position_y_o = 15;
+    #60
+
+    dart_position_x_o = 26;
+    dart_position_y_o = 19;
+    #20
+    dart_position_x_o = 1;
+    dart_position_y_o = 14;
+    #20
+    dart_position_x_o = 14;
+    dart_position_y_o = 15;
+    #20
+    
+    #60
+    $finish;
+end
 
 endmodule

@@ -1,4 +1,6 @@
 `timescale 1ns / 1ps
+`include "dart.v"
+`include "pattern.v"
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name: test
 // Module Description: link the pattern and the design in simulation
