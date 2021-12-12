@@ -196,6 +196,8 @@ end
 always@(posedge clk)begin//update counter
     if(~reset)counter<=2'b00;
     else if(state==TOUCH)counter=(counter==2'b10)?2'b00:counter+2'b01;
+	else if(state==COUNT&&who_turn==1'b0)counter<=(player_1_point>=dart_point)?counter:2'b00;
+	else if(state==COUNT&&who_turn==1'b1)counter<=(player_2_point>=dart_point)?counter:2'b00;
     else counter<=counter;
 end
 
