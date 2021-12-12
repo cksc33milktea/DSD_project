@@ -195,7 +195,7 @@ end
 
 always@(posedge clk)begin//update counter
     if(~reset)counter<=2'b00;
-    else if(state==TOUCH)counter=(counter==2'b11)?2'b00:counter+2'b01;
+    else if(state==TOUCH)counter=(counter==2'b10)?2'b00:counter+2'b01;
     else counter<=counter;
 end
 
